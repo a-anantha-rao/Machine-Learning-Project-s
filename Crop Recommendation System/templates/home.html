@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Crop Recommendation</title>
+  <style>
+    /* Header styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    /* Navigation styles */
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 5px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    /* Main content styles */
+    main {
+      margin-bottom: 50px; /* Adjust the margin to accommodate the footer height */
+    }
+
+    /* Background image */
+    body {
+      margin: 0;
+      background-image: url("/static/lav.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    /* Overlay color layers */
+    .header-overlay,
+    .footer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      mix-blend-mode: multiply;
+    }
+
+    .header-overlay {
+      background-color: rgba(51, 51, 51, 0.5); /* Adjust opacity as needed */
+    }
+
+    .footer-overlay {
+      background-color: rgba(51, 51, 51, 0.5); /* Adjust opacity as needed */
+    }
+
+    /* Login box styles */
+    .login-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 90px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .login-box h1 {
+      margin: 0;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box; /* Include padding and border in the specified width */
+    }
+
+    .login-box input[type="submit"],
+    .login-box input[type="reset"] {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .login-box a {
+      color: #333;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Crop Recommendation</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/index">SignIn</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+
+  <footer>
+    <p>Contact us: (+91) - 9966XXXXXX</p>
+    <p>Address: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - 7XXXX</p>
+  </footer>
+
+  <div class="header-overlay"></div>
+  <div class="footer-overlay"></div>
+</body>
+
+</html>
