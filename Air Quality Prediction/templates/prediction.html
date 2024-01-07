@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AQI Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/back.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"],
+        button[type="button"] {
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin-right: 10px;
+        }
+
+        button[type="button"] {
+            background-color: #ccc;
+            border: none;
+            color: white;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AIR POLLUTION PREDICTION</h1>
+        <form method="POST" action="/predict">
+            <label for="city">Choose City:</label>
+            <select name="city" required>
+                <option value="Srikakulam">Srikakulam</option>
+                <option value="Vizag">Vizag</option>
+                <option value="Vijaywada">Vijaywada</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Pune">Pune</option>
+                <option value="Patna">Patna</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Rajasthan">Rajasthan</option>
+            </select><br>
+
+            <label for="aqi">AQI Value (0-500):</label>
+            <input type="number" name="aqi" required placeholder="Enter AQI Value (0-500)" min="0" max="500"><br>
+
+            <label for="co_aqi">CO AQI Value (0-50):</label>
+            <input type="number" name="co_aqi" required placeholder="Enter CO AQI Value (0-50)" min="0" max="50"><br>
+
+            <label for="co_cat">CO AQI Category:</label>
+            <input type="text" name="co_cat" required placeholder="Enter CO AQI Category"><br>
+
+            <label for="ozone_aqi">Ozone AQI Value (0-200):</label>
+            <input type="number" name="ozone_aqi" required placeholder="Enter Ozone AQI Value (0-200)" min="0" max="200"><br>
+
+            <label for="ozone_cat">Ozone AQI Category:</label>
+            <input type="text" name="ozone_cat" required placeholder="Enter Ozone AQI Category"><br>
+
+            <label for="no2_aqi">NO2 AQI Value (0-200):</label>
+            <input type="number" name="no2_aqi" required placeholder="Enter NO2 AQI Value (0-200)" min="0" max="200"><br>
+
+            <label for="no2_cat">NO2 AQI Category:</label>
+            <input type="text" name="no2_cat" required placeholder="Enter NO2 AQI Category"><br>
+
+            <label for="pm25_aqi">PM2.5 AQI Value (0-500):</label>
+            <input type="number" name="pm25_aqi" required placeholder="Enter PM2.5 AQI Value (0-500)" min="0" max="500"><br>
+
+            <div class="centered-buttons">
+                <button type="submit">Predict (Random Forest)</button>
+                <button type="submit" formaction="/predict_knn">Predict (KNN)</button>
+                <button type="submit" formaction="/predict_svm">Predict (SVM)</button>
+            </div>
+        </form>
+
+        <button class="home-button" onclick="location.href='/dashboard'">Home</button>
+    </div>
+</body>
+</html>

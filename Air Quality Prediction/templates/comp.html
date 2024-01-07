@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algorithm Performance Comparison</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/back.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            color: white;
+        }
+
+        .graph-container {
+            display: flex;
+            flex-direction: column; /* Set the flex direction to column */
+            align-items: flex-start; /* Align the content to the left */
+            justify-content: flex-start; /* Align the content to the top */
+            margin-bottom: 20px;
+        }
+
+        .graph {
+            flex-basis: 100%; /* Take up the full width of the container */
+            max-width: 400px;  /* Limit the maximum width of the graph */
+            margin-bottom: 20px; /* Add some spacing between the graphs */
+        }
+
+        .home-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .home-button a {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 4px;
+            background-color: green;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparison of Algorithm Performance</h1>
+        <div class="graph-container">
+            <div class="graph">
+                <h2 style="color: lawngreen;">Accuracy Comparison</h2>
+                <img src="{{ url_for('static', filename='acc.png') }}" alt="Accuracy Comparison">
+            </div>
+            <div class="graph">
+                <h2 style="color: whitesmoke;">Metrics Comparison</h2>
+                <img src="{{ url_for('static', filename='met.png') }}" alt="Metrics Comparison">
+            </div>
+        </div>
+        <div class="home-button">
+            <a href="/dashboard" title="Home">Home</a>
+        </div>
+    </div>
+</body>
+</html>
